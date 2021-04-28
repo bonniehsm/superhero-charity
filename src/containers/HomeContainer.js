@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from '../logo.svg';
 import '../App.scss';
 
@@ -9,14 +10,12 @@ function HomeContainer() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
+        <Link
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          to="/donation"
         >
-          Learn React
-        </a>
+          DONATE!
+        </Link>
       </header>
     </div>
   );

@@ -11,6 +11,9 @@ function App() {
           <Route path="/donation" exact component={DonationContainer}/>
         </Switch>
       </BrowserRouter>
+      <footer>
+        Data provided by Marvel. © 2014 Marvel
+      </footer>
     </div>
   );
 }

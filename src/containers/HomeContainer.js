@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
-import logo from '../logo.svg';
+import HeroesContainer from './HeroesContainer';
 import '../App.scss';
 
 function HomeContainer() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <HeroesContainer/>
         <Link
           className="App-link"
           to="/donation"

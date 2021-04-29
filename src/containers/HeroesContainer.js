@@ -63,6 +63,9 @@ class HeroesContainer extends Component {
                         <CardContainer characters={characters} visible={visible}/> :
                         <div>No characters found</div>
                 }         
+            <footer>
+                Data provided by Marvel. © 2014 Marvel
+            </footer>
             </div>
         )
     }

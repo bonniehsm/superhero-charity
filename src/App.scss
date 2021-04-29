@@ -1,10 +1,11 @@
 $bevan-ff: 'Bevan', cursive;
 $opensans-ff: 'Open Sans', sans-serif;
 $seafoam: #61dafb;
+$hoverButtonSpeed: 0.8s;
 
-body {
-    /*overflow: hidden;*/
-}
+/**
+* ELEMENT STYLING
+*/
 
 h1, h2, h3 {
     font-family: $bevan-ff;
@@ -26,22 +27,17 @@ footer {
     right: 0;
 }
 
+/**
+* ROOT STYLING
+*/
+
 #root {
     height: 100vh;
 }
 
-.button {
-    font-family: $opensans-ff;
-}
-
-.donation-link {
-    color: $seafoam;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border: 1px solid;
-    padding: 4px 16px;
-    border-radius: 8px;
-}
+/**
+* HOMECONTAINER STYLING
+*/
 
 .main-container {
     text-align: center;
@@ -57,9 +53,40 @@ footer {
     font-size: calc(10px + 2vmin);
     color: white;
     opacity: 0.9;
-    h1 {
+    #header-appeal {
         font-weight: 400;
         letter-spacing: 3px;
+        margin-bottom: 0;
+    }
+    #text-appeal {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.donation-button {
+    font-family: $opensans-ff;
+    border: 1px solid $seafoam;
+    padding: 9px 23px;
+    border-radius: 8px;
+    margin-top: 15px;
+    animation: all $hoverButtonSpeed;  /* Chrome, Firefox 16+, IE 10+, Opera */    
+    -webkit-animation: all $hoverButtonSpeed; /* Chrome, Opera 15+, Safari 5+ */
+    -moz-animation: all $hoverButtonSpeed; /* Fx 5+ */
+    -o-animation: all $hoverButtonSpeed; /* Opera 12+ */    
+    color: $seafoam;
+    &:hover {
+        background-color: $seafoam;
+        .donation-link {
+            color: white;
+        }
+    }
+    .donation-link {        
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        opacity: 0.9;
+        color: $seafoam;
     }
 }
 
@@ -72,7 +99,12 @@ footer {
         transform: rotate(360deg);
     }
 }
-  
+
+/**
+    @-webkit-keyframes fadeslideUp
+    @-moz-keyframes fadeslideUp
+    @-o-keyframes fadeslideUp 
+*/
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {

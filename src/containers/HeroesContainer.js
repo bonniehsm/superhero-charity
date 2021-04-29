@@ -16,34 +16,31 @@ class HeroesContainer extends Component {
     }
 
     checkIfThumbNailExists(character){
-        console.log(`checkIfThumbNailExists called`);
         const path = character.thumbnail.path;
-        console.log(path);
         //check if thumbnail path contains "image_not_available"
         return !path.includes("image_not_available");
     }
 
     async componentDidMount(){
-        console.log(Secrets);
         const baseURL = "https://gateway.marvel.com:443/v1/public/";
         const primaryKey = Secrets.PRIMARY_KEY;
         const limit = this.state.count;
         console.log(`HeroesContainer component did mount`);
 
-        const getCharactersURL = `${baseURL}/characters?limit=${limit}&apikey=${primaryKey}`
-        console.log(`${getCharactersURL}`);
+        const getCharactersURL = `${baseURL}/characters?limit=${limit}&apikey=${primaryKey}`;
 
+        let count = this.state.count;
         let response = await axios.get(getCharactersURL)
             .then((res) => {
                 var results = res.data.data.results;
                 var resultsWithImage = results.filter(this.checkIfThumbNailExists)
-                console.log(resultsWithImage);
+                count = resultsWithImage.length;
                 this.setState({
-                    data: resultsWithImage
+                    data: resultsWithImage,
+                    count: count
                 });            
             });   
         
-        let count = this.state.count;
         this.timer = setInterval(() => {
             this.setState({
                 visible: this.state.visible == count - 1 ? 0 : this.state.visible + 1

@@ -16,18 +16,6 @@ class CardContainer extends Component {
     }
 }
 
-/*
-function CardContainer(props) {
-    return (
-      <div className="card-container">
-          <ul className="card-list">
-              <CardItems characters={props.characters}/>
-        </ul>
-      </div>
-    );
-}
-*/
-
 function CardItems(props){
     const items = props.characters;
     const visibleIndex = props.visible;

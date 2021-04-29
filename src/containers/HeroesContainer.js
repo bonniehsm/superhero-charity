@@ -26,7 +26,7 @@ function CardItems(props){
             portrait_incredible	216x324px
          */           
         let thumbnail = item.thumbnail;
-        let medium = 'portrait_medium';
+        //let medium = 'portrait_medium';
         let incredible = 'portrait_incredible';
         let thumbnailUrl = `${thumbnail.path}/${incredible}.${thumbnail.extension}`;
 
@@ -89,7 +89,7 @@ class HeroesContainer extends Component {
                 <header>
                     <h1>HeroesContainer</h1>
                     {
-                        characters != undefined ? 
+                        characters !== undefined ? 
                             <CardContainer characters={characters}/> :
                             <div>No characters found</div>
                     }

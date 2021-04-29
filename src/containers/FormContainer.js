@@ -53,7 +53,7 @@ class FormContainer extends Component {
                     <div className="form-subfield">
                         <h2>Donation Amount</h2>
                         <label>
-                            Gift Amount (min 10): $
+                            <span className="form-label">Gift Amount (min 10): $</span>
                             <input required
                                 type="number" 
                                 min="10"
@@ -68,7 +68,7 @@ class FormContainer extends Component {
                     <div className="form-subfield">
                         <h2>Billing Information</h2>
                         <label>
-                            First Name:
+                            <span className="form-label">First Name:</span>
                             <input required
                                 className="fn-input"
                                 type="text" 
@@ -80,7 +80,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Last Name:
+                            <span className="form-label">Last Name:</span>
                             <input required
                                 className="ln-input"
                                 type="text" 
@@ -92,7 +92,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Street 1:
+                            <span className="form-label">Street 1:</span>
                             <input required
                                 className="street-input"
                                 type="text" 
@@ -104,7 +104,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Street 2:
+                            <span className="form-label">Street 2:</span>
                             <input 
                                 type="text" 
                                 name="street2" 
@@ -112,7 +112,7 @@ class FormContainer extends Component {
                                 onChange={this.handleChange}/>
                         </label>
                         <br/>
-                        Province/Territory: 
+                        <span className="form-label">Province/Territory:</span>
                         <select 
                             value={this.state.provinceTerritory} 
                             name="provinceTerritory" 
@@ -133,7 +133,7 @@ class FormContainer extends Component {
                         </select>
                         <br/>
                         <label>
-                            Postal Code:
+                            <span className="form-label">Postal Code:</span>
                             <input required
                                 className="pc-input"
                                 type="text" 
@@ -145,7 +145,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Email:
+                            <span className="form-label">Email:</span>
                             <input required
                                 className="email-input"
                                 type="email" 
@@ -160,7 +160,7 @@ class FormContainer extends Component {
                     <div className="form-subfield">
                         <h2>Payment Information</h2>
                         <label>
-                            Credit Card #:
+                            <span className="form-label">Credit Card #:</span>
                             <input required
                                 className="cc-input"
                                 type="number" 
@@ -171,7 +171,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Expiration Date (mm/yyyy):
+                            <span className="form-label">Expiration Date (mm/yyyy):</span>
                             <input required
                                 className="expdate-input"
                                 type="text" 
@@ -182,7 +182,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            CVV Number:
+                            <span className="form-label">CVV Number:</span>
                             <input required
                                 className="cc-input"
                                 type="number" 
@@ -192,7 +192,7 @@ class FormContainer extends Component {
                             <span class="invalid"></span>
                         </label>
                     </div>
-                    <input type="submit" value="Submit"/>
+                    <input className="submit-button button" type="submit" value="Submit"/>
                 </form>    
             </div>
         )  

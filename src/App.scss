@@ -1,4 +1,18 @@
+$bevan-ff: 'Bevan', cursive;
+$opensans-ff: 'Open Sans', sans-serif;
+
 $seafoam: #61dafb;
+
+
+h1, h2, h3 {
+    font-family: $bevan-ff;
+    letter-spacing: 1px;
+    word-spacing: 5px;    
+}
+
+.button {
+    font-family: $opensans-ff;
+}
 
 .App-link {
     color: $seafoam;

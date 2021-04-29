@@ -1,46 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Secrets from '../secrets.json';
-
-function CardContainer(props) {
-    return (
-      <div className="card-container">
-          <ul>
-              <CardItems characters={props.characters}/>
-        </ul>
-      </div>
-    );
-}
-
-function CardItems(props){
-    const items = props.characters;
-    console.log(items);
-    const listItems = items.map((item, index) => {
-        /* Get thumbnail images */
-        /**
-         * portrait_small	50x75px
-            portrait_medium	100x150px
-            portrait_xlarge	150x225px
-            portrait_fantastic	168x252px
-            portrait_uncanny	300x450px
-            portrait_incredible	216x324px
-         */           
-        let thumbnail = item.thumbnail;
-        //let medium = 'portrait_medium';
-        let incredible = 'portrait_incredible';
-        let thumbnailUrl = `${thumbnail.path}/${incredible}.${thumbnail.extension}`;
-
-        return(
-            <li className="card-item" key={`card-item-${index}`}>
-                <figure>
-                    <figcaption>{item.name}</figcaption>
-                    <img src={thumbnailUrl} alt={item.name}/>
-                </figure>
-            </li>
-        )
-    })
-    return listItems;
-}
+import CardContainer from './CardContainer';
+import '../styles/Hero.scss';
 
 class HeroesContainer extends Component {
     constructor(props){
@@ -87,13 +49,13 @@ class HeroesContainer extends Component {
         return(
             <div>
                 <header>
-                    <h1>HeroesContainer</h1>
-                    {
-                        characters !== undefined ? 
-                            <CardContainer characters={characters}/> :
-                            <div>No characters found</div>
-                    }
-                </header>              
+                    <h1>Superheroes need their superhowers</h1>
+                </header> 
+                {
+                    characters !== undefined ? 
+                        <CardContainer characters={characters}/> :
+                        <div>No characters found</div>
+                }         
             </div>
         )
     }

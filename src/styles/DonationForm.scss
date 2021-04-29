@@ -1,0 +1,157 @@
+$accent: #fca311;
+
+.donation-container {
+    text-align: center;
+}
+
+/**
+* Form Container Styling
+*/
+.form-container {
+    display: flex;
+    flex-direction: column;
+    form {
+        text-align: center;
+    }
+}
+.form-subfield {
+    margin: 20px 30px;
+    padding-bottom: 30px;
+}
+
+input, select {
+    line-height: 1.5rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 220px;
+    font-size: 1rem;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;    
+}
+
+/**
+* Input Styling
+*/
+
+.form-label {
+    margin-right: 15px;
+    display: inline-block;
+    width: 170px;
+    text-align: right;
+    font-size: 1rem;
+
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.fn-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.ln-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.street-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.pc-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.email-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.cc-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.expdate-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+.cc-input:invalid+span {
+    position: relative;
+    &:after {
+        position: absolute; 
+        content: '✖';
+        color: $accent;
+        padding-left: 5px;
+        top: 1px;
+    }
+}
+
+#submit-button {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 7px 15px;
+    cursor: pointer;
+    &:hover{
+        color: $accent;
+    }
+}
+
+#back-button {
+    margin-bottom: 15px;
+    font-weight: 400;
+}

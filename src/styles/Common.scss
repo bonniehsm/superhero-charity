@@ -1,0 +1,28 @@
+$bevan-ff: 'Bevan', cursive;
+$opensans-ff: 'Open Sans', sans-serif;
+$primary: #14213d;
+$accent: #fca311;
+$lightgray: #e5e5e5;
+$black: #000;
+
+.common-button {
+    font-family: $opensans-ff;
+    border: 1px solid $primary;
+    padding: 9px 23px;
+    border-radius: 8px;
+    margin-top: 15px;
+    background-color: white;
+    &:hover {
+        background-color: $primary;
+        .common-link {
+            color: white;
+        }
+    }
+    .common-link {        
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        opacity: 0.9;
+        color: $primary;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Form.scss';
+import '../styles/DonationForm.scss';
 
 class FormContainer extends Component {
     constructor(props){
@@ -40,7 +40,7 @@ class FormContainer extends Component {
     }
 
     validateFields(){
-        console.log(`validateFields function called`);
+        //console.log(`validateFields function called`);
     }
 
     render(){
@@ -192,7 +192,12 @@ class FormContainer extends Component {
                             <span class="invalid"></span>
                         </label>
                     </div>
-                    <input className="submit-button button" type="submit" value="Submit"/>
+                    <div class="button-row">
+                        <input 
+                        className="common-button" 
+                            id="submit-button" 
+                            type="submit" name="submit" value="SUBMIT"/>
+                    </div>
                 </form>    
             </div>
         )  

@@ -1,7 +1,10 @@
 $bevan-ff: 'Bevan', cursive;
 $opensans-ff: 'Open Sans', sans-serif;
-$seafoam: #61dafb;
-$hoverButtonSpeed: 0.8s;
+$primary: #14213d;
+$accent: #fca311;
+$lightgray: #e5e5e5;
+$black: #000;
+$bounceSpeed: 1.1s;
 
 /**
 * ELEMENT STYLING
@@ -43,7 +46,7 @@ footer {
     text-align: center;
   }
 
-.main-header {
+.main-content {
     background-color: #282c34d4;
     height: 100vh;
     display: flex;
@@ -55,59 +58,43 @@ footer {
     opacity: 0.9;
     #header-appeal {
         font-weight: 400;
-        letter-spacing: 3px;
+        letter-spacing: 11px;
         margin-bottom: 0;
+        font-size: 2em;
+        text-transform: uppercase;
     }
     #text-appeal {
         margin-top: 0;
         margin-bottom: 0;
     }
-}
-
-.donation-button {
-    font-family: $opensans-ff;
-    border: 1px solid $seafoam;
-    padding: 9px 23px;
-    border-radius: 8px;
-    margin-top: 15px;
-    animation: all $hoverButtonSpeed;  /* Chrome, Firefox 16+, IE 10+, Opera */    
-    -webkit-animation: all $hoverButtonSpeed; /* Chrome, Opera 15+, Safari 5+ */
-    -moz-animation: all $hoverButtonSpeed; /* Fx 5+ */
-    -o-animation: all $hoverButtonSpeed; /* Opera 12+ */    
-    color: $seafoam;
-    &:hover {
-        background-color: $seafoam;
-        .donation-link {
-            color: white;
-        }
-    }
-    .donation-link {        
-        font-weight: bold;
-        letter-spacing: 2px;
-        font-size: 1.4rem;
-        opacity: 0.9;
-        color: $seafoam;
+    #arrow-symbol {
+        display: inline-block;
+        color: $accent;
+        font-size: 2.5rem;
+        font-weight: 600;
+        animation: arrowBounce $bounceSpeed ease-in-out infinite;  /* Chrome, Firefox 16+, IE 10+, Opera */    
+        -webkit-animation: arrowBounce $bounceSpeed ease-in-out infinite; /* Chrome, Opera 15+, Safari 5+ */
+        -moz-animation: arrowBounce $bounceSpeed ease-in-out infinite; /* Fx 5+ */
+        -o-animation: arrowBounce $bounceSpeed ease-in-out infinite; /* Opera 12+ */            
     }
 }
 
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+@keyframes arrowBounce {
+    0% {
+        transform: translateY(0px);
     }
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
 /**
-    @-webkit-keyframes fadeslideUp
-    @-moz-keyframes fadeslideUp
-    @-o-keyframes fadeslideUp 
+    @-webkit-keyframes arrowBounce
+    @-moz-keyframes arrowBounce
+    @-o-keyframes arrowBounce 
 */
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}

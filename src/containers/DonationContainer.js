@@ -14,7 +14,7 @@ class DonationContainer extends Component {
         return(
             <div>
                 <header>
-                    <h1>DonationContainer</h1>
+                    <h1>Support Superheroes!</h1>
                 </header>          
                 <FormContainer/>
             </div>

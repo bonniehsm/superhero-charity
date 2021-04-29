@@ -46,16 +46,18 @@ class FormContainer extends Component {
     render(){
         console.log(this.state);
         return(
-            <div>
+            <div className="form-container">
                 <form onSubmit={this.handleSubmit}>
 
                     { /* DONATION */ }
-                    <div>
+                    <div className="form-subfield">
+                        <h2>Donation Amount</h2>
                         <label>
                             Gift Amount (min 10): $
                             <input required
                                 type="number" 
                                 min="10"
+                                step="any"
                                 name="donation" 
                                 value={this.state.donation} 
                                 onChange={this.handleChange}/>
@@ -63,7 +65,8 @@ class FormContainer extends Component {
                     </div>
 
                     { /* BILLING */ }
-                    <div>
+                    <div className="form-subfield">
+                        <h2>Billing Information</h2>
                         <label>
                             First Name:
                             <input required
@@ -130,15 +133,17 @@ class FormContainer extends Component {
                         </select>
                         <br/>
                         <label>
-                            postalCode:
+                            Postal Code:
                             <input required
                                 className="pc-input"
                                 type="text" 
                                 name="postalCode" 
+                                placeholder="A1A1A1"
                                 value={this.state.postalCode} 
                                 onChange={this.handleChange}/>
                             <span class="invalid"></span>
                         </label>
+                        <br/>
                         <label>
                             Email:
                             <input required
@@ -152,7 +157,8 @@ class FormContainer extends Component {
                     </div>
 
                     { /* PAYMENT */ }
-                    <div>
+                    <div className="form-subfield">
+                        <h2>Payment Information</h2>
                         <label>
                             Credit Card #:
                             <input required
@@ -165,7 +171,7 @@ class FormContainer extends Component {
                         </label>
                         <br/>
                         <label>
-                            Expiration Date:
+                            Expiration Date (mm/yyyy):
                             <input required
                                 className="expdate-input"
                                 type="text" 

@@ -1,8 +1,10 @@
 $bevan-ff: 'Bevan', cursive;
 $opensans-ff: 'Open Sans', sans-serif;
-
 $seafoam: #61dafb;
 
+body {
+    /*overflow: hidden;*/
+}
 
 h1, h2, h3 {
     font-family: $bevan-ff;
@@ -20,7 +22,7 @@ footer {
     right: 0;
 }
 
-.root {
+#root {
     height: 100vh;
 }
 
@@ -30,6 +32,7 @@ footer {
 
 .donation-link {
     color: $seafoam;
+    font-weight: bold;
 }
 
 .main-container {
@@ -37,15 +40,19 @@ footer {
   }
 
 .main-header {
-    background-color: #282c34;
-    min-height: 100vh;
+    background-color: #282c34d4;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    opacity: 0.6;
+    opacity: 0.9;
+    h1 {
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
 }
 
 

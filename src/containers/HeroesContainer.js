@@ -8,8 +8,9 @@ class HeroesContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            images: [],
-            data: []
+            data: [],
+            visible: 0,
+            count: 10
         }
         this.checkIfThumbNailExists = this.checkIfThumbNailExists.bind(this);
     }
@@ -26,7 +27,7 @@ class HeroesContainer extends Component {
         console.log(Secrets);
         const baseURL = "https://gateway.marvel.com:443/v1/public/";
         const primaryKey = Secrets.PRIMARY_KEY;
-        const limit = 26;
+        const limit = this.state.count;
         console.log(`HeroesContainer component did mount`);
 
         const getCharactersURL = `${baseURL}/characters?limit=${limit}&apikey=${primaryKey}`
@@ -41,16 +42,28 @@ class HeroesContainer extends Component {
                     data: resultsWithImage
                 });            
             });   
+        
+        let count = this.state.count;
+        this.timer = setInterval(() => {
+            this.setState({
+                visible: this.state.visible == count - 1 ? 0 : this.state.visible + 1
+            })
+        }, 2500);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timer);
     }
 
     render(){
         let characters = this.state.data;
-        console.log(characters);
+        let visible = this.state.visible;
+        console.log(`visible index: ${visible}`);
         return(
             <div className="hero-container">
                 {
                     characters !== undefined ? 
-                        <CardContainer characters={characters}/> :
+                        <CardContainer characters={characters} visible={visible}/> :
                         <div>No characters found</div>
                 }         
             </div>

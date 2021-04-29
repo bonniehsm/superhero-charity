@@ -9,7 +9,7 @@ class CardContainer extends Component {
         return (
             <div className="card-container">
                 <ul className="card-list">
-                    <CardItems characters={this.props.characters}/>
+                    <CardItems characters={this.props.characters} visible={this.props.visible}/>
               </ul>
             </div>
           );
@@ -30,8 +30,12 @@ function CardContainer(props) {
 
 function CardItems(props){
     const items = props.characters;
+    const visibleIndex = props.visible;
+    let isVisible = false;
+    console.log(`isVisible: ${isVisible}`);
     console.log(items);
     const listItems = items.map((item, index) => {
+        isVisible = visibleIndex == index ? true : false;
         /* Get thumbnail images */
         /**
          * portrait_small	50x75px
@@ -43,11 +47,12 @@ function CardItems(props){
          */           
         let thumbnail = item.thumbnail;
         //let medium = 'portrait_medium';
-        let incredible = 'portrait_incredible';
-        let thumbnailUrl = `${thumbnail.path}/${incredible}.${thumbnail.extension}`;
+        let pIncredible = 'portrait_incredible';
+        let lIncredible = 'landscape_incredible';
+        let thumbnailUrl = `${thumbnail.path}/${pIncredible}.${thumbnail.extension}`;
 
         return(
-            <li className="card-item" key={`card-item-${index}`}>
+            <li className={`card-item ${isVisible ? "visible-card" : "hidden-card"}`} key={`card-item-${index}`}>
                 {/*
                 <figure>
                     <figcaption>{item.name}</figcaption>

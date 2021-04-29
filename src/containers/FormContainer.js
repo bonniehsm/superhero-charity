@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Form.scss';
 
 class FormContainer extends Component {
     constructor(props){
@@ -66,28 +67,37 @@ class FormContainer extends Component {
                         <label>
                             First Name:
                             <input required
+                                className="fn-input"
                                 type="text" 
                                 name="firstName" 
+                                minLength="2"
                                 value={this.state.firstName} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <br/>
                         <label>
                             Last Name:
                             <input required
+                                className="ln-input"
                                 type="text" 
                                 name="lastName" 
+                                minLength="2"
                                 value={this.state.lastName} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <br/>
                         <label>
                             Street 1:
                             <input required
+                                className="street-input"
                                 type="text" 
                                 name="street1" 
+                                minLength="10"
                                 value={this.state.street1} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <br/>
                         <label>
@@ -122,18 +132,22 @@ class FormContainer extends Component {
                         <label>
                             postalCode:
                             <input required
+                                className="pc-input"
                                 type="text" 
                                 name="postalCode" 
                                 value={this.state.postalCode} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <label>
                             Email:
                             <input required
+                                className="email-input"
                                 type="email" 
                                 name="email" 
                                 value={this.state.email} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                     </div>
 
@@ -141,32 +155,35 @@ class FormContainer extends Component {
                     <div>
                         <label>
                             Credit Card #:
-                            <input 
-                                required
+                            <input required
+                                className="cc-input"
                                 type="number" 
                                 name="creditCard" 
                                 value={this.state.creditCard} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <br/>
                         <label>
                             Expiration Date:
-                            <input 
-                                required
+                            <input required
+                                className="expdate-input"
                                 type="text" 
                                 name="expDate" 
                                 value={this.state.expDate} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                         <br/>
                         <label>
                             CVV Number:
-                            <input 
-                                required
+                            <input required
+                                className="cc-input"
                                 type="number" 
                                 name="cvv" 
                                 value={this.state.cvv} 
                                 onChange={this.handleChange}/>
+                            <span class="invalid"></span>
                         </label>
                     </div>
                     <input type="submit" value="Submit"/>

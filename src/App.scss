@@ -14,30 +14,29 @@ ul {
     list-style-type: none;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.root {
+    height: 100vh;
+}
+
 .button {
     font-family: $opensans-ff;
 }
 
-.App-link {
+.donation-link {
     color: $seafoam;
 }
 
-.App {
+.main-container {
     text-align: center;
   }
-  
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-}
-}
-
-.App-header {
+.main-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -46,6 +45,7 @@ ul {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    opacity: 0.6;
 }
 
 
@@ -58,3 +58,9 @@ ul {
     }
 }
   
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}

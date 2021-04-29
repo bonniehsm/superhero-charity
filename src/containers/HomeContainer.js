@@ -4,16 +4,19 @@ import '../App.scss';
 
 function HomeContainer() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HeroesContainer/>
+    <div className="main-container">
+      <HeroesContainer/>      
+      <header className="main-header">
+        <h1>Superheroes need their superhowers</h1>
+        <div>
         <Link
-          className="App-link"
+          className="donation-link"
           to="/donation"
         >
           DONATE!
         </Link>
-      </header>
+      </div>        
+      </header> 
     </div>
   );
 }

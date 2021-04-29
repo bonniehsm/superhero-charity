@@ -26,7 +26,7 @@ class HeroesContainer extends Component {
         console.log(Secrets);
         const baseURL = "https://gateway.marvel.com:443/v1/public/";
         const primaryKey = Secrets.PRIMARY_KEY;
-        const limit = 15;
+        const limit = 26;
         console.log(`HeroesContainer component did mount`);
 
         const getCharactersURL = `${baseURL}/characters?limit=${limit}&apikey=${primaryKey}`
@@ -47,10 +47,7 @@ class HeroesContainer extends Component {
         let characters = this.state.data;
         console.log(characters);
         return(
-            <div>
-                <header>
-                    <h1>Superheroes need their superhowers</h1>
-                </header> 
+            <div className="hero-container">
                 {
                     characters !== undefined ? 
                         <CardContainer characters={characters}/> :

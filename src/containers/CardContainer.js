@@ -48,10 +48,13 @@ function CardItems(props){
 
         return(
             <li className="card-item" key={`card-item-${index}`}>
+                {/*
                 <figure>
                     <figcaption>{item.name}</figcaption>
                     <img src={thumbnailUrl} alt={item.name}/>
                 </figure>
+                */}
+                <img src={thumbnailUrl} alt={item.name}/>
             </li>
         )
     })
